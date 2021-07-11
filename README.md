@@ -6,5 +6,5 @@ How to use:
 
 ```
 pip install streamlit
-streamlit run https://raw.githubusercontent.com/epogrebnyak/streamlit-demo/main/streamlit_app.py
+streamlit run https://raw.githubusercontent.com/steffincodes/data-scribbles/main/app.py
 ```
