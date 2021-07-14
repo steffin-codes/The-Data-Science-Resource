@@ -1,7 +1,7 @@
 import streamlit as st
 from multiapp import MultiApp
 # import your app modules here
-from projects import p01_palGen,p02_faceDetect
+from projects import p01_palGen #,p02_faceDetect
 class Project:
     def app():
         project = MultiApp()
