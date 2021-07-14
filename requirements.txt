@@ -1,4 +1,7 @@
 streamlit
 numpy
 pandas
-datetime
+sklearn
+matplotlib
+collections
+cv2
