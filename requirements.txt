@@ -3,4 +3,4 @@ numpy
 pandas
 sklearn
 matplotlib
-opencv-python
+opencv-python-headless
