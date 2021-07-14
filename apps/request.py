@@ -5,7 +5,7 @@ def app():
     st.title('Request')
     requestor_name = st.text_input("What do I call you?",max_chars=10)
     requestor_contact = st.text_input("How do I contact you (IG or Twitter link please)?",max_chars=50)
-    request = st.text_area("What do you think I should work on?",height=200)
+    request = st.text_area("What do you think I should work on?",)
     if st.button("Request"):
         request_date = datetime.datetime.now()
         st.success("Request added to the queue successfully!")
