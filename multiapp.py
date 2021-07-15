@@ -37,11 +37,24 @@ class MultiApp:
             "title": title,
             "function": func
         })
-    def run(self):
+    def run(self,group_name=""):
         # app = st.sidebar.radio(
         # app = st.selectbox(
         app = st.sidebar.selectbox(
-            "",
+            group_name,
+            self.apps,
+            format_func=lambda app: app['title'])
+        app['function']()
+    # extra for toggling to show code/writeup/app
+    def run_radio(self,group_name=""):
+        # https://discuss.streamlit.io/t/horizontal-radio-buttons/2114/6
+        st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+        # for toggling between code/markdown/app
+        app = st.radio(
+        # app = st.sidebar.radio(
+        # app = st.selectbox(
+        # app = st.sidebar.selectbox(
+            group_name,
             self.apps,
             format_func=lambda app: app['title'])
         app['function']()

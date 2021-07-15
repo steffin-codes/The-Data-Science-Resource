@@ -1,16 +1,11 @@
-import streamlit as st
 from multiapp import MultiApp
-# import your app modules here
-from projects import p01_palGen #,p02_faceDetect
+# import your project modules here
+from projects import p01
 class Project:
     def app():
         project = MultiApp()
-
         # https://docs.streamlit.io/en/stable/api.html
-
         # Add all your application here
-        project.add_app("P01: Palatte generator using K-Means", p01_palGen.app)
-        # project.add_app("P02: Hello", p02_faceDetect.app)
-
+        project.add_app("P01: Palatte Generator using K-Means", p01.app)
         # The main app
-        project.run()
+        project.run(group_name = "Choose a project:")

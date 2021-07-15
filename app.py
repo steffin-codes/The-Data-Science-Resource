@@ -15,7 +15,6 @@ st.set_page_config(
 # Streamlit encourages well-structured code, like starting execution in a main() function.
 def main():
     app = MultiApp()
-
     st.sidebar.markdown("""
     # Hey there 👋
 
@@ -35,7 +34,7 @@ def main():
     # app.add_app(" Template", template.app)  # DO NOT PUBLISH
 
     # The main app
-    app.run()
+    app.run(group_name="Navbar") # is there some other name for this?
 
     st.sidebar.markdown("""
     ## Say Hi to me!

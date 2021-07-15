@@ -1,8 +1,6 @@
-from operator import mod
 import streamlit as st
 from collections import Counter
 from sklearn.cluster import KMeans
-from matplotlib import colors
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
@@ -25,19 +23,18 @@ def app():
         return modified_img
  
     # project inputs
-    st.title("Palette generator using K-Means")
-    st.write("Presenting a simple implementation of the K-means ML algorithm. This web app requires an image, which will be fed to the K-means algorithm, which will detect the colors and calculates the wieghts of each color. This is then graphed into a pie chart that looks like a Palette!")
     st.sidebar.subheader("Project Inputs:")
     uploaded_file = st.sidebar.file_uploader("Upload Image",type=['png','jpeg'],help="Bigger the image accurate the clustering would be!")
-    n_clusters = st.sidebar.slider('Value of K?', 1, 10, 4,help="No of colors!")
+    n_clusters = st.sidebar.slider('Value of K?', 1, 10, 4,help="Number of colors!")
     generate = st.sidebar.button("Generate",help="Clicke me to generate the chart!")
     
     if uploaded_file is not None:
-        # orig_image = None
-        # Convert the file to an opencv image.
-        file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-        opencv_image = cv2.imdecode(file_bytes, 1)
-        orig_image = opencv_image
+        pil_image = Image.open(uploaded_file).convert('RGB') 
+        open_cv_image = np.array(pil_image) 
+        # Oh the evils of copypasta without reading!
+        # Convert RGB to BGR 
+        # open_cv_image = open_cv_image[:, :, ::-1].copy() 
+        orig_image = open_cv_image
         col1,col2 = st.beta_columns([1,1])
         with col1:
             st.subheader("Image")
