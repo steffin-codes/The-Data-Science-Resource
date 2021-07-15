@@ -1,4 +1,3 @@
-from typing import final
 import streamlit as st
 from multiapp import MultiApp
 from projects.p01 import PaletteGenerator
