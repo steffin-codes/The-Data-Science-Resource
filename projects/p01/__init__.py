@@ -1,27 +1,28 @@
 import streamlit as st
 from multiapp import MultiApp
 from projects.p01 import PaletteGenerator
+from Helper import Functions
 # TODO: Option to choose between writeup/code/app
+# Download a single file and make its content available as a string.
+
 def p01_md():
     try:
-        with open("projects\p01\README.md", 'r') as p01_file:
-            text = p01_file.read()
-            if text:
-                st.markdown(text)
-            else: 
-                st.info("Looks like it is empty 👀!!")
+        text = Functions.get_file_content_as_string("projects/p01/README.md")
+        if text:
+            st.markdown(text)
+        else: 
+            st.info("Looks like it is empty 👀!!")
     except:
         st.error("Whoops there is no writeup for this project!")
         # TODO: Add code to request for writeup?
     pass
 def p01_py():
     try:
-        with open("projects\p01\PaletteGenerator.py", 'r',encoding="utf8") as p01_file:
-            code = p01_file.read()
-            if code:
-                st.code(code, language='python')
-            else: 
-                st.info("How is this possible!!")
+        code = Functions.get_file_content_as_string("projects/p01/PaletteGenerator.py")
+        if code:
+            st.code(code, language='python')
+        else: 
+            st.info("How is this possible!!")
     except:
         st.error("Something is definetly messed up!")
         # TODO: Add code to contact me with screenshot?
