@@ -1,39 +1,40 @@
 import streamlit as st
-from collections import Counter
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
-import numpy as np
+from PIL import Image
 import cv2
-from PIL import Image # using this to open image...
-# TODO: give a search functionality to the posts...
-# this is amazing!!
-# https://github.com/streamlit/demo-self-driving/blob/5f8e500dc8ccf914051859b905361d7a52d22dda/streamlit_app.py
+import numpy as np
+from sklearn.cluster import KMeans
+from collections import Counter
+import matplotlib.pyplot as plt
+#TODO: Palette Generator using K-means Classifier Algorithm
 def app():
-
     def rgb_to_hex(rgb_color):
-        # function to convert rgb color to hex codes
+        '''
+        function to convert 
+        (0,0,0) -> #000000
+        (255,255,255) -> #ffffff
+        '''
         hex_color = "#"
         for i in rgb_color: hex_color += ("{:02x}".format(int(i)))
         return hex_color
-
     def prep_image(raw_img):
-        # function to resize and reshape before feeding to classifier
+        '''
+        function to clean image
+        '''
         modified_img = cv2.resize(raw_img, raw_img.shape[:2], interpolation = cv2.INTER_AREA) #optional
         modified_img = modified_img.reshape(modified_img.shape[0]*modified_img.shape[1], 3) #required
         return modified_img
- 
-    # project inputs
+    #? Project Inputs
     st.sidebar.subheader("Project Inputs:")
     uploaded_file = st.sidebar.file_uploader("Upload Image",type=['png','jpeg'],help="Bigger the image accurate the clustering would be!")
     n_clusters = st.sidebar.slider('Value of K?', 1, 10, 4,help="Number of colors!")
-    generate = st.sidebar.button("Generate",help="Clicke me to generate the chart!")
-    
+    generate = st.sidebar.button("Generate") 
     if uploaded_file is not None:
+        '''
+        So cv.imread of fileuploader image is not feasible
+        So used a hacky PIL library just to open the image
+        '''
         pil_image = Image.open(uploaded_file).convert('RGB') 
         open_cv_image = np.array(pil_image) 
-        # Oh the evils of copypasta without reading!
-        # Convert RGB to BGR 
-        # open_cv_image = open_cv_image[:, :, ::-1].copy() 
         orig_image = open_cv_image
         col1,col2 = st.beta_columns([1,1])
         with col1:
@@ -53,6 +54,8 @@ def app():
                 fig, ax = plt.subplots()
                 ax.pie(counts.values(), labels = hex_colors, colors = hex_colors)
                 st.pyplot(fig)
+                # TODO: fetch color names given hexcode maybe?
+                st.write("The generated colors are: ",hex_colors)
     else:
         st.warning("👈🏼 Head over to the sidebar and upload an image!")    
     pass

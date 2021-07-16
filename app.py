@@ -15,15 +15,7 @@ st.set_page_config(
 # Streamlit encourages well-structured code, like starting execution in a main() function.
 def main():
     app = MultiApp()
-    st.sidebar.markdown("""
-    # Hey there 👋
-
-    Welcome to my Data Blog! I hope you find what you are looking for!
-
-    """)
-
-    # https://docs.streamlit.io/en/stable/api.html
-
+    
     # Add all your application here
     app.add_app("⛺ Home", home.app)
     app.add_app("📦️ Project", Project.app)
