@@ -48,7 +48,8 @@ def app():
                 blurred = cv2.bilateralFilter(img, d=7, sigmaColor=200,sigmaSpace=200)
                 cartoon = cv2.bitwise_and(blurred, blurred, mask=edges)
                 st.image(cartoon)
-
+            else:
+                st.warning("👈🏼 Head over to the sidebar and click Generate!")    
     else:
         st.warning("👈🏼 Head over to the sidebar and upload an image!")    
     pass

@@ -57,6 +57,8 @@ def app():
                 st.pyplot(fig)
                 # TODO: fetch color names given hexcode maybe?
                 st.write("The generated colors are: ",hex_colors)
+            else:
+                st.warning("👈🏼 Head over to the sidebar and click Generate!")    
     else:
         st.warning("👈🏼 Head over to the sidebar and upload an image!")    
     pass
