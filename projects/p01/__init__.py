@@ -8,6 +8,9 @@ from Helper import Functions
 def p01_md():
     try:
         text = Functions.get_file_content_as_string("projects/p01/README.md")
+        # to check locally
+        # with open("projects/p01/README.md") as f:
+        #     text = f.read() 
         if text:
             st.markdown(text)
         else: 
