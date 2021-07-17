@@ -1,3 +1,3 @@
 "Date","Name","TLDR","Algorithm","Notebook"
-"20210715","Palette Generator","Given an image will give a palette of hex colors using K-Means Algorithm"," K-Means Algorithm from Scikit-learn","https://colab.research.google.com/drive/1V1cgg4gX855SCjpcPlA5gTLh1C1Sd_yU?usp=sharing"
-"20210717","Cartoonifying an Image","Given an image will produce a catoonified image using K-Means Algorithm","K-means Algorithm from OpenCV","https://colab.research.google.com/drive/15osRtroUiBjkDyZxuAtKTaXtdc24cjg2?usp=sharing"
+"15 Jul 2021","Palette Generator","Given an image will give a palette of hex colors using K-Means Algorithm"," K-Means Algorithm from Scikit-learn","https://colab.research.google.com/drive/1V1cgg4gX855SCjpcPlA5gTLh1C1Sd_yU?usp=sharing"
+"17 Jul 2021","Cartoonifying an Image","Given an image will produce a catoonified image using K-Means Algorithm","K-means Algorithm from OpenCV","https://colab.research.google.com/drive/15osRtroUiBjkDyZxuAtKTaXtdc24cjg2?usp=sharing"
