@@ -14,7 +14,6 @@
 >
 > `Source :` [TDS blog](https://towardsdatascience.com/building-an-image-color-analyzer-using-python-12de6b0acf74)
 >
-> `Demo : `
 >  ![ Demo of Palette Genrator using K-Means Algorithm](https://raw.githubusercontent.com/steffincodes/data-scribbles/main/projects/p01/p01_demo.gif)
 
 ---
