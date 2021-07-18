@@ -1,3 +1,4 @@
 "Date","Name","TLDR","Algorithm","NotebookName","NotebookLink"
 "15 Jul 2021","Palette Generator","Given an image will give a palette of hex colors using K-Means Algorithm"," K-Means Algorithm from Scikit-learn","ImageColorAnlayzer.ipynb","https://colab.research.google.com/drive/1V1cgg4gX855SCjpcPlA5gTLh1C1Sd_yU?usp=sharing"
 "17 Jul 2021","Cartoonifying an Image","Given an image will produce a catoonified image using K-Means Algorithm","K-means Algorithm from OpenCV","ImageCartoonifyer.ipynb","https://colab.research.google.com/drive/15osRtroUiBjkDyZxuAtKTaXtdc24cjg2?usp=sharing"
+"18 Jul 2021","Handwritten Digit Recognition","A simple Handwritten Digit Recognition using CNN on the MINST dataset that accepts data from canvas","Convolutional Neural Networks from Tensorflow-Keras","HandwrittenNumberRecognition.ipynb","https://colab.research.google.com/drive/1VkM7x3Qf_NGQt9t10tprv1662duWPPrM?usp=sharing"
