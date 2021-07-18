@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from projects.p02 import CartoonifyImage
+from projects.p02 import App
 from Helper import Functions
 # TODO: Option to choose between writeup/code/app
 # Download a single file and make its content available as a string.
@@ -18,7 +18,7 @@ def p02_md():
     pass
 def p02_py():
     try:
-        code = Functions.get_file_content_as_string("projects/p02/CartoonifyImage.py")
+        code = Functions.get_file_content_as_string("projects/p02/App.py")
         if code:
             st.code(code, language='python')
         else: 
@@ -30,6 +30,6 @@ def p02_py():
 def app():
     p02 = MultiApp()
     p02.add_app("Writeup", p02_md)
-    p02.add_app("App", CartoonifyImage.app)
+    p02.add_app("App", App.app)
     p02.add_app("Code", p02_py)
     p02.run_radio()   
