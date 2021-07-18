@@ -17,14 +17,15 @@ def app():
         > ## **{}**
         > > {}
         > 
-        > *View the accompaning [Google Colab Notebook]({})*
+        > *View the accompaning Google Colab Notebook: 📄 [{}]({})*
         >
         > **Algorithm used:** `{}`
         '''.format(
             project["date"].strftime("%c").replace(" 00:00:00",","),
             project["name"],
             project["tldr"],
-            project["notebook"],
+            project["notebookname"],
+            project["notebooklink"],
             project["algorithm"]
 
         ))
