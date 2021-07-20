@@ -26,7 +26,7 @@ def app():
     #? Project Inputs
     st.sidebar.subheader("Project Inputs:")
     st.title("P01: Palette Generator using K-Means")
-    uploaded_file = st.sidebar.file_uploader("Upload Image",type=['png','jpeg'],help="Bigger the image accurate the clustering would be!")
+    uploaded_file = st.sidebar.file_uploader("Upload Image",type=['png','jpeg','jpg'],help="Bigger the image accurate the clustering would be!")
     n_clusters = st.sidebar.slider('Value of K?', 1, 10, 4,help="Number of colors!")
     generate = st.sidebar.button("Generate") 
     if uploaded_file is not None:

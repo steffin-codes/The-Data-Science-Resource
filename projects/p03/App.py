@@ -35,7 +35,7 @@ def app():
     stroke_width = 10
     stroke_color = "#000000"
     bg_color = "#FFFFFF"
-    bg_image = None #st.sidebar.file_uploader("Image with number:", type=["png", "jpg"])
+    bg_image = None #st.sidebar.file_uploader("Image with number:", type=["png", "jpg","jpeg"])
     drawing_mode ="freedraw"
     # realtime_update = st.sidebar.checkbox("Update in realtime", True)
     col1,col2 = st.beta_columns([1,1])

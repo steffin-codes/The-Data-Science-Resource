@@ -23,7 +23,7 @@ def app():
     #! Project Inputs
     st.title("P02: Cartoonify Image using K-Means")
     st.sidebar.subheader("Project Inputs:")
-    uploaded_file = st.sidebar.file_uploader("Upload Image",type=['png','jpeg'],help="Bigger the image accurate the clustering would be!")
+    uploaded_file = st.sidebar.file_uploader("Upload Image",type=['png','jpeg','jpg'],help="Bigger the image accurate the clustering would be!")
     line_size = st.sidebar.slider('Line Size:', 4, 10, 9,help="Thickness of the line")
     blur_value = st.sidebar.slider('Blur:', max(2,line_size), line_size, min(3,line_size),help="Thickness of the line")
     total_color = st.sidebar.slider('Total Colors:', 1, 20, 9,help="Number of clusters")
