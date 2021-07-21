@@ -25,7 +25,7 @@ def app():
         fig, ax = plt.subplots()
         ax.pie(score.values(), labels = list(score.keys()))
         req = requests.get(
-            "https://g.tenor.com/v1/random?q=%s&key=%s&limit=%s" % (emotion, apikey, limit))
+            "https://g.tenor.com/v1/random?contentfilter=high&q=%s&key=%s&limit=%s" % (emotion, apikey, limit))
 
         if req.status_code == 200:
             # load the GIFs using the urls for the smaller GIF sizes
