@@ -2,7 +2,7 @@ import streamlit as st
 from multiapp import MultiApp
 from projects.{p0n} import App
 from Helper import Functions
-#TODO: {tldr}
+#TODO: {projectTitle}
 def {p0n}_md():
     try:
         text = Functions.get_file_content_as_string("projects/{p0n}/README.md")

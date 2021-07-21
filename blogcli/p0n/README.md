@@ -14,7 +14,7 @@
 >
 > `Original :` [{sourceName}]({sourceLink})
 >
->  ![Demo of {projectTitle}](https://raw.githubusercontent.com/steffincodes/data-scribbles/main/projects/p01/p01_demo.gif)
+>  ![Demo of {projectTitle}](https://raw.githubusercontent.com/steffincodes/data-scribbles/main/projects/{p0n}/{p0n}_demo.gif)
 
 ---
 

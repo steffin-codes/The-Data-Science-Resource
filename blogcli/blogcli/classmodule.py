@@ -59,6 +59,7 @@ class MyClass():
                     nbLink = self.nbLink,
                     sourceName = self.sourceName,
                     sourceLink = self.sourceLink,
+                    p0n=self.p0n,
                 )
             fp.write(readme_content)
             pass
@@ -83,6 +84,7 @@ class MyClass():
             init_content = init_content.format(
                 tldr = self.tldr,
                 p0n = self.p0n,
+                projectTitle=self.projectTitle,
             )
             fp.write(init_content)
             pass
