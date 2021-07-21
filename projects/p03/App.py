@@ -28,13 +28,13 @@ def app():
             height=SIZE,
             drawing_mode="freedraw",
             key='canvas')
+        predict = st.button("Predict") 
     with col2:
         img = cv2.resize(canvas_result.image_data.astype('uint8'), (28, 28))
         rescaled = cv2.resize(img, (SIZE, SIZE), interpolation=cv2.INTER_NEAREST)
         st.subheader("Rescaled Image 28X28")
         st.image(rescaled)
     with col3:
-        predict = st.button("Predict") 
         if predict:
             test_x = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             score = MINST_MODEL.predict(test_x.reshape(1, 28, 28))
