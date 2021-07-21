@@ -28,7 +28,7 @@ def p03_py():
     pass
 def app():
     p03 = MultiApp()
-    p03.add_app("App", App.app)
     p03.add_app("Writeup", p03_md)
+    p03.add_app("App", App.app)
     p03.add_app("Code", p03_py)
     p03.run_radio()   
