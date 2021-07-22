@@ -14,7 +14,7 @@
 >
 > `Original :` [Datahacker Blog](http://datahacker.rs/002-opencv-projects-how-to-cartoonize-an-image-with-opencv-in-python/)
 >
-<!-- >  ![Demo of Cartoonifying Image using K-Means](https://raw.githubusercontent.com/steffincodes/data-scribbles/main/projects/p02/p02_demo.gif) -->
+>  ![Demo of Cartoonifying Image using K-Means](https://raw.githubusercontent.com/steffincodes/data-scribbles/main/projects/p02/p02_demo.gif)
 
 ---
 
