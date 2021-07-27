@@ -24,7 +24,7 @@ def main():
 
     🐦 twitter[@steffincodes](http://www.twitter.com/steffincodes)
 
-    📷 instagram[@steffincodes](http://www.instagram.com/steffincodes)
+    📷 instagram[@steffin.codes](http://www.instagram.com/steffin.codes)
     """)
 if __name__ == "__main__":
     main()
