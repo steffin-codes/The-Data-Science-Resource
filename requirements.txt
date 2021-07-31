@@ -7,3 +7,4 @@ opencv-python-headless
 streamlit-drawable-canvas
 tensorflow
 text2emotion
+gtts
