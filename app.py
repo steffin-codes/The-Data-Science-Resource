@@ -27,4 +27,7 @@ def main():
     📷 instagram[@steffin.codes](http://www.instagram.com/steffin.codes)
     """)
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except:
+        st.warning("Oops! Please rerun 😬")
