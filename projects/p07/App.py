@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import re
-import matplotlib.pyplot as plt
 # from random import shuffle
 #TODO: Whatsapp Chat Analyzer
 def app():
