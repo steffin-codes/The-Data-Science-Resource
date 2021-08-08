@@ -1,6 +1,6 @@
 from multiapp import MultiApp
 # import your project modules here
-from projects import p01,p02,p03,p04,p05,p06
+from projects import p01,p02,p03,p04,p05,p06,p07
 class Project:
     def app():
         project = MultiApp()
@@ -12,5 +12,6 @@ class Project:
         project.add_app("P04: Real-Time Sentiment Analysis", p04.app)
         project.add_app("P05: Face Detection using OpenCV", p05.app)
         project.add_app("P06: Text to Speech using gtts", p06.app)
+        project.add_app("P07: WhatsApp Chat Analyser", p07.app)
         # The main app
         project.run(group_name = "Choose a project:")
