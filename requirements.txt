@@ -8,4 +8,3 @@ streamlit-drawable-canvas
 tensorflow
 text2emotion
 gtts
-re
