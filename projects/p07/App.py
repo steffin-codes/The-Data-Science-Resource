@@ -93,8 +93,10 @@ def app():
         URLPATTERN = r'(https?://S+)'
         df['Url_Count'] = df.Message.apply(lambda x: re.findall(URLPATTERN, x)).str.len()
         links = np.sum(df.Url_Count)
+        MEDIAPATTERN = r'<Media omitted>'
+        df['Media_Count'] = df.Message.apply(lambda x : re.findall(MEDIAPATTERN, x)).str.len()
         total_messages = df.shape[0]
-        media_messages = df[df['Message'] == '<Media omitted>'].shape[0]
+        media_messages = np.sum(df.Media_Count)
         links = np.sum(df.Url_Count)
         def display_group_stats():
             st.markdown('''
@@ -172,7 +174,7 @@ def app():
             max_words = df[['Author','Words']].groupby('Author').sum()
             m_w = max_words.sort_values('Words',ascending=False)
             st.bar_chart(m_w)
-            if df[df['Message'] == '<Media omitted>'].shape[0] > 0:
+            if np.sum(df.Media_Count) > 0:
                 st.subheader("Highest Media Sharer:")
                 media_omitted = df[df['Message'] == '<Media omitted>']
                 media_sharer = media_omitted['Author'].value_counts()
