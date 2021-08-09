@@ -3,6 +3,7 @@ import urllib
 import pandas as pd
 GIT_REPO = 'https://raw.githubusercontent.com/steffincodes/data-scribbles/main/'
 IS_LOCAL = False # commit with False
+DO_DEBUG = True
 class Functions():
     @st.cache(show_spinner=False)
     def get_file_content_as_string(path):

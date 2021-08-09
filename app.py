@@ -1,3 +1,4 @@
+from Helper import DO_DEBUG
 import streamlit as st
 from multiapp import MultiApp
 # import your app modules here
@@ -28,7 +29,10 @@ def main():
     📷 instagram[@steffin.codes](http://www.instagram.com/steffin.codes)
     """)
 if __name__ == "__main__":
-    try:
+    if DO_DEBUG:
         main()
-    except:
-        st.warning("Oops! Please rerun 😬")
+    else:
+        try:
+            main()
+        except:
+            st.warning("Oops! Please rerun 😬")
