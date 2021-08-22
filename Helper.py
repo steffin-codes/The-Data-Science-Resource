@@ -9,7 +9,7 @@ class Functions():
     def get_file_content_as_string(path):
         if IS_LOCAL:
             with open(path,'r') as fp:
-                return fp.read().decode("utf-8")
+                return fp.read()
         else:
             url = GIT_REPO + path
             response = urllib.request.urlopen(url)
