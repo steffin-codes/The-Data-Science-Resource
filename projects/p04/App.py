@@ -3,6 +3,7 @@ import requests
 import text2emotion as te
 import json
 import matplotlib.pyplot as plt
+import pandas as pd
 
 #TODO: Realtime Sentiment Analysis
 def app():
@@ -23,7 +24,10 @@ def app():
         limit = 1
         # get the top 8 GIFs for the search term using default locale of EN_US
         fig, ax = plt.subplots()
-        ax.pie(score.values(), labels = list(score.keys()))
+        x = list(score.keys())
+        y = score.values()
+        df = pd.DataFrame({"x":x,"y":y})
+        ax.barh("x","y",data=df,color="purple")
         req = requests.get(
             "https://g.tenor.com/v1/random?contentfilter=high&q=%s&key=%s&limit=%s" % (emotion, apikey, limit))
 
