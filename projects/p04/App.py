@@ -30,7 +30,7 @@ def app():
         if req.status_code == 200:
             # load the GIFs using the urls for the smaller GIF sizes
             tenorJSON = json.loads(req.content)
-            col1,col2 = st.beta_columns([1,1])
+            col1,col2 = st.columns([1,1])
             with col1:
                 st.image (tenorJSON["results"][0]["media"][0]["gif"]["url"])
             with col2:

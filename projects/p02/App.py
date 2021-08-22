@@ -36,7 +36,7 @@ def app():
         pil_image = Image.open(uploaded_file).convert('RGB') 
         open_cv_image = np.array(pil_image) 
         orig_image = open_cv_image
-        col1,col2 = st.beta_columns([1,1])
+        col1,col2 = st.columns([1,1])
         with col1:
             st.subheader("Image")
             st.image(orig_image)

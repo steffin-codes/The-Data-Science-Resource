@@ -12,7 +12,7 @@ def app():
     MINST_MODEL = load_model('projects/p03/minst_model')
     #? Project Inputs
     st.title("P03: Handwritten Digit Recognition")
-    col1,col2,col3 = st.beta_columns([1,1,1])
+    col1,col2,col3 = st.columns([1,1,1])
     with col1:
         stroke_width = 10
         stroke_color = "#FFFFFF"
