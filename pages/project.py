@@ -1,5 +1,5 @@
 from multiapp import MultiApp
-from projects import p01,p02,p03,p04,p05,p06,p07
+from projects import p01,p02,p03,p04,p05,p06,p07,p08
 class Project:
     def app():
         app = MultiApp()
@@ -21,6 +21,7 @@ class All:
         project.add_app("P05: Face Detection using OpenCV", p05.app)
         project.add_app("P06: Text to Speech using gtts", p06.app)
         project.add_app("P07: WhatsApp Chat Analyser", p07.app)
+        project.add_app("P08: Fake News Detection", p08.app)
         project.run(group_name = "Choose a project:")
         pass
     pass
@@ -43,6 +44,7 @@ class ML:
         project.add_app("P03: Handwritten Digit Recognition", p03.app)
         project.add_app("P04: Real-Time Sentiment Analysis", p04.app)
         project.add_app("P06: Text to Speech using gtts", p06.app)
+        project.add_app("P08: Fake News Detection", p08.app)
         project.run(group_name = "Choose a ML project:")
         pass
     pass
