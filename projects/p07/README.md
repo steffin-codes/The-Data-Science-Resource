@@ -4,7 +4,7 @@
 
 > ## 👀 Quick View 
 >
-> `Domain :` *"Human Resources"*
+> `Domain :` *Human Resources*
 >
 > `Algorithm :` *Vader Lexicon from NLTK*
 >
