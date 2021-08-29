@@ -1,4 +1,4 @@
-# Cartoonifying Image using K-Means
+# P02: Cartoonifying Image using K-Means
 
 ---
 

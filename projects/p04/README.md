@@ -1,4 +1,4 @@
-# Real-Time Sentiment Analysis
+# P04: Real-Time Sentiment Analysis
 
 ---
 
@@ -21,29 +21,34 @@
 > ## 🔍 Detailed View
 > 
 > ### **What has been addressed?**
-> >
+> > To detect the tone of a typed sentence in real-time.
 > >
 > 
 > ### **Why has this been addressed?**
-> >
+> > By detecting the emotions of the reviews in real-time and automating the response images, we can make better connections between the product user and the product owner (the product being )
 > >
 > 
 > ### **How has this been addressed?**
-> >
-> >
+> > There are 2 main packages to apply sentiment analysis on text data.
+> > - VADER (Valence Aware Dictionary for Sentiment Reasoning) from NLTK
+> >   - VADER helps in classifying unlabelled text data using polarity and scores
+> >   - It Uses a dictionary that maps lexical features to sentiment scores
+> > - Text2emotion
+> >   - After performing NLP techniques to remove unwanted words, it parses words/phrases and tracks the top 5 emotions (Happy, Angry, Sad, Surprise, and Fear)
+> >   - It requrs a dictionary of the emotion and its score for teh inputted text.
 
 ---
 
 > ## 📝 Note to Self
 >
 > ### **Something New**
-> > 
+> > Used API to get a random gif based on the detected emotion from text
 > > 
 > 
 > ### **Work on**
-> > 
+> > Get better gif?
 >
 > ### **Future Improvement**
-> > 
+> > Use it in a chat bot
 
 ---

@@ -1,4 +1,4 @@
-# Palette generator using K-Means
+# P01: Palette generator using K-Means
 
 ---
 
@@ -22,15 +22,15 @@
 > 
 > ### **What has been addressed?**
 > >
-> >To generate a custom color palette based on a visually appealing image.
+> > To generate a custom color palette based on a visually appealing image.
 > 
 > ### **Why has this been addressed?**
 > >
-> >For an artistically impaired designer/developer choosing a color palette for their next big project can be quite demanding.
+> > For an artistically impaired designer/developer choosing a color palette for their next big project can be quite demanding.
 > 
 > ### **How has this been addressed?**
 > >
-> >With this nifty tool, you can upload your image from which a customizable number of colors can be extracted using the `K-means clustering` algorithm and displayed as a pie chart (a.k.a) **The Color Palette**.
+> > With this nifty tool, you can upload your image from which a customizable number of colors can be extracted using the `K-means clustering` algorithm and displayed as a pie chart (a.k.a) **The Color Palette**.
 
 ---
 
