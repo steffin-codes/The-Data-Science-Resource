@@ -9,7 +9,7 @@ import pandas as pd
 def app():
     #? Project Inputs
     st.sidebar.subheader("Project Inputs:")
-    st.title("P04: Real-Time Sentiment Analysis using Vader from nltk")
+    st.title("P04: Real-Time Sentiment Analysis using text2emotion package")
     user_input = st.text_input("Let's judge your tone!")
     submit = st.button(label="Judge Me!")
 
