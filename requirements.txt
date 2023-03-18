@@ -1,10 +1,1 @@
 streamlit
-numpy
-pandas
-sklearn
-matplotlib
-opencv-python-headless
-streamlit-drawable-canvas
-tensorflow
-text2emotion
-gtts
