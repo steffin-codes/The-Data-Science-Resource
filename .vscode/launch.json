@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "streamlit",
             "justMyCode": true,
-            "args": ["run","app.py"]
+            "args": ["run","🏠_Home.py"]
         }
     ]
 }
