@@ -21,7 +21,7 @@ COLORS={
 }
 def display_highlight(st,text,type="h1", delim='|',get_str=False):
     text_list = text.split(delim)
-    highlight_css_start = f"<span style='background: linear-gradient(180deg,rgba(0,0,0,0) 50%, #7B1FA2 50%); font-weight:700;'>"
+    highlight_css_start = f"<span style='background: linear-gradient(180deg,rgba(0,0,0,0) 50%, #7B1FA2 50%); font-weight:700; color:#fff;'>"
     highlight_css_end = "</span>"
     final_text = "<"+type+">"+text_list[0]
     for i, text in enumerate(text_list[1:]):
