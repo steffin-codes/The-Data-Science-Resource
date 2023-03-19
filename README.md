@@ -2,34 +2,41 @@
 
 This is a work in progress please be warned...🖖🏼
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/steffincodes/data-scribbles/main/app.py)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://steffin-datascribbles.streamlit.app/)
 
 ## Reproducing this web app locally
 To recreate this web app on your own computer, do the following.
 
-### Create conda environment
-1. Firstly, we will create a conda environment called *streamlit*
-    ```
-    conda create -n streamlit python=3.7.9
-    ```
-2. Secondly, we will login to the *streamlit* environement
-    ```
-    conda activate streamlit
-    ```
-### Install prerequisite libraries
+### Create Virtual Environment
 
-1. Download requirements.txt file
-    ```
-    wget https://raw.githubusercontent.com/steffincodes/data-scribbles/main/requirements.txt
-    ```
+1. Open the project in VS Code 
+2. Use the `ctrl+p` hotkey to open the menu. 
+3. Create the Python Virtual Environment using the wizard.
+4. Make sure the `requirements.txt` is installed inside the environment
+5. Activate the environment
 
-2. Pip install libraries
-    ```
-    pip install -r requirements.txt
-    ```
+### Create launch file for debugging
 
+1. From the debug menu, create a `launch.json` for python file and select the `Run Python File from Module` option.
+2. Add the streamlit entry file in the args. The `launch.json` for this project looks like below
+    ```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "justMyCode": true,
+            "args": ["run","🏠_Home.py"]
+        }
+    ]
+}
+    ```
 ###  Launch the app locally
 
-```
-streamlit run app.py
-```
+1. Launch from the debug menu [press `F5`] or run it from the terminal using the command `streamlit run 🏠_Home.py`

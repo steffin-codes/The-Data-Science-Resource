@@ -1,15 +1,18 @@
 import streamlit as st
-
+from styles import *
 st.set_page_config(
     page_title="Credits | Steffin",
     page_icon="✒️",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
-
-st.markdown('''
-# ✒️ Credits
-- 🔗 *[Streamlit](https://docs.streamlit.io/)*
-- 🔗 *[Markdown](https://www.markdownguide.org/basic-syntax/)*
-- 🔗 *[Icons8](https://icons8.com)*
-
-''')
+CREDITS = [
+    {"title":"Streamlit","link":"https://docs.streamlit.io/"}
+   ,{"title":"Markdown","link":"https://www.markdownguide.org/basic-syntax/"}
+   ,{"title":"Streamlit Extras","link":"https://extras.streamlit.app/"}
+#    ,{"title":"","link":""}
+]
+st.title("✒️ Credits | Resources")
+display_line(st,"2em 5em 4em")
+for credit in CREDITS:
+    st.markdown(f'🔗 [{credit["title"]}]({credit["link"]})')
