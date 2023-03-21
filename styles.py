@@ -19,17 +19,24 @@ COLORS={
     "Grey": "#616161",
     "BlueGrey": "#455A64"
 }
-def display_highlight(st,text,type="h1", delim='|',get_str=False):
+def display_highlight(st,text,type="h1", delim='|',get_str=False,margin=""):
     text_list = text.split(delim)
-    highlight_css_start = f"<span style='background: linear-gradient(180deg,rgba(0,0,0,0) 50%, #7B1FA2 50%); font-weight:700; color:#fff;'>"
+    highlight_css_start = f"<span style='background: linear-gradient(180deg,rgba(0,0,0,0) 50%, #7B1FA2 50%); font-weight:700; color:#fff; text-decoration:none'>"
     highlight_css_end = "</span>"
     final_text = "<"+type+">"+text_list[0]
+    if type == "li":
+        final_text = "<ul><"+type+">"+text_list[0]
+    if margin:
+        final_text = "<"+type+" style='margin:"+margin+"'>"+text_list[0]
     for i, text in enumerate(text_list[1:]):
         if (i+1)%2:
             final_text+=highlight_css_start+text+highlight_css_end
         else:
             final_text+=text
-    final_text+="</"+type+">"
+    if type == "li":
+        final_text+="</"+type+"></ul>"
+    else:
+        final_text+="</"+type+">"
     if get_str:
         return final_text
     else:
