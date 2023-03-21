@@ -32,15 +32,23 @@ def SocialLinks():
     display_line(st,'1em 40em 2em')
     social_columns = st.columns(3)
     with social_columns[0]:
-        st.info("👔 Linkedin | [@steffinrayen](https://www.linkedin.com/in/steffinrayen/)")
+        display_centered_text(st,"h5","✍🏻 |To Write|")
+        display_line(st)
+        st.info("👔 LinkedIn | [@steffinrayen](https://www.linkedin.com/in/steffinrayen/)")
         st.info("📷 Instagram | [@steffin.codes](https://www.instagram.com/steffin.codes/)")
         st.info("📝 Medium | [@steffincodes](https://medium.com/@steffincodes)")
     with social_columns[1]:
+        display_centered_text(st,"h5","👩🏻‍💻 |To Code|")
+        display_line(st)
         st.info("🧠 Kaggle | [@steffincodes](https://www.kaggle.com/steffincodes)")
         st.info("🐱 Github | [@steffincodes](https://github.com/steffincodes)")
+        st.info("📑 Tableau | [@steffincodes](https://public.tableau.com/app/profile/steffincodes)")
     with social_columns[2]:
+        display_centered_text(st,"h5","🎨 |To Draw|")
+        display_line(st)
         st.info("🎨 Codepen | [@steffincodes](https://codepen.io/steffincodes)")
         st.info("🖼️ Sketchfab | [@steffincodes](https://sketchfab.com/steffincodes)")
+        st.info("📷 Instagram | [@steffin.rayen](https://www.instagram.com/steffin.rayen/)")
     pass
 def AboutMe():
     Header()
