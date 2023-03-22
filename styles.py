@@ -50,13 +50,3 @@ def display_line(st,margin="0 5em 0"):
     return st.markdown(f"<hr style='margin:{margin}'>",unsafe_allow_html=True)
 def display_book_image(st,img_src,img_alt="",caption=""):
     return st.image(img_src,width=250,caption=caption)
-
-STREAMLIT_STYLE = """
-			<style>
-			@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-			html, body, [class*="css"]  {
-			font-family: 'Roboto', sans-serif;
-			}
-			</style>
-			"""
