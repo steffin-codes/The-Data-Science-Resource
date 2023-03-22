@@ -4,7 +4,7 @@ st.set_page_config(
     page_title="Data Scribbles | Steffin",
     page_icon="🏠",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    # initial_sidebar_state="collapsed"
 )
 def Header():
     display_highlight(st,type="h1", delim='|',text="🗃️ |Data Scribbles|")

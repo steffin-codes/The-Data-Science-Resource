@@ -4,7 +4,7 @@ st.set_page_config(
     page_title="Credits | Steffin",
     page_icon="✒️",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    # initial_sidebar_state="collapsed"
 )
 CREDITS = [
     {"title":"Streamlit","link":"https://docs.streamlit.io/"}
