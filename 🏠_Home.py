@@ -1,11 +1,14 @@
 import streamlit as st
 from styles import *
+
+
 st.set_page_config(
     page_title="Data Scribbles | Steffin",
     page_icon="🏠",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    # initial_sidebar_state="collapsed"
 )
+st.markdown(STREAMLIT_STYLE, unsafe_allow_html=True)
 def Header():
     display_highlight(st,type="h1", delim='|',text="🗃️ |Data Scribbles|")
     display_line(st,"0")
