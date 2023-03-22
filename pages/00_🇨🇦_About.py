@@ -5,7 +5,7 @@ st.set_page_config(
     page_title="About me | Steffin",
     page_icon="🇨🇦",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    # initial_sidebar_state="collapsed"
 )
 
 def Header():
