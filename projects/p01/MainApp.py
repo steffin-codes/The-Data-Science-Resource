@@ -5,13 +5,15 @@ import numpy as np
 Image Editor Functionalities
     - Resize Image
     - Crop Image
-    - Add Text
     - Rotate Flip
-    - Vignette
     - Background Removal
+    - Object Removal
+    - Vignette
     - Generate Color FIlter
     - Apply Filters
 '''
+if 'rotate_angle' not in st.session_state:
+	st.session_state.rotate_angle = 0
 def resizeImage(orig_img):
     st.markdown("### 📏 Resize Image")
     resize_img = orig_img
@@ -135,6 +137,45 @@ def cropImage(orig_img):
         resize_img_size = cropped_img.shape
         st.image(cropped_img, caption=f"[Cropped Image] W:{resize_img_size[1]} | H:{resize_img_size[0]}")
     pass
+def rotateImage(orig_img):
+    st.markdown("### 🔄 Rotate Image")
+    rotated_img = orig_img
+    rotate_config_cols = st.columns([1,1,1,1])
+    def get_rotated_image(img,angle):
+        if angle == 90: return cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+        elif angle == 180: return cv2.rotate(img, cv2.ROTATE_180)
+        elif angle == 270 or angle == -90: return cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        elif angle == 0: return img
+        pass
+    with rotate_config_cols[1]:
+        if st.button("Flip",key="flip-rotate"):
+            st.session_state.rotate_angle=(st.session_state.rotate_angle + 180) % 360
+            rotated_img = get_rotated_image(orig_img,st.session_state.rotate_angle)
+            pass
+    with rotate_config_cols[0]:
+        if st.button("Rotate Left 90",key="left-rotate"):
+            st.session_state.rotate_angle=(st.session_state.rotate_angle + 270) % 360
+            rotated_img = get_rotated_image(orig_img,st.session_state.rotate_angle)
+            pass
+    with rotate_config_cols[2]:
+        if st.button("Rotate Right 90",key="right-rotate"):
+            st.session_state.rotate_angle=(st.session_state.rotate_angle + 90) % 360
+            rotated_img = get_rotated_image(orig_img,st.session_state.rotate_angle)
+            pass
+    with rotate_config_cols[3]:
+        if st.button("Reset Image",key="reset-rotate"):
+            rotated_img = orig_img
+            st.session_state.rotate_angle = 0
+            pass
+    img_cols = st.columns(2)
+    with img_cols[0]:
+        orig_img_size = orig_img.shape
+        st.image(orig_img, caption=f"[Original Image] W:{orig_img_size[1]} | H:{orig_img_size[0]}")
+    with img_cols[1]:
+        resize_img_size = rotated_img.shape
+        st.image(rotated_img, caption=f"[Rotated Image] W:{resize_img_size[1]} | H:{resize_img_size[0]}")
+    pass
+
 def App():
     uploaded_img = st.file_uploader("Choose an Image", type=["png", "jpg", "jpeg"])
     if uploaded_img is not None:
@@ -142,6 +183,7 @@ def App():
             img_edit_options = (
                 '📏 Resize Image'
                 ,'✂️ Crop Image'
+                ,'🔄 Rotate Image'
                 )
             st.success("So what do you wanna do with the image?")
             img_edit_opt = st.radio(
@@ -154,6 +196,11 @@ def App():
         st.info("Choose Image Editing Options from side bar..",icon="👈")
         if img_edit_opt == img_edit_options[0]:
             resizeImage(cv_orig_img)
+            pass
         elif img_edit_opt == img_edit_options[1]:
             cropImage(cv_orig_img)
+            pass
+        elif img_edit_opt == img_edit_options[2]:
+            rotateImage(cv_orig_img)
+            pass
     pass
