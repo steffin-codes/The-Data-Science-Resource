@@ -12,17 +12,17 @@ Image Editor Functionalities
     - Generate Color FIlter
     - Apply Filters
 '''
-def resizeImage(orig_img,resize_img=None):
+def resizeImage(orig_img):
     st.markdown("### 📏 Resize Image")
-    if resize_img is None:
-        resize_img = orig_img
+    resize_img = orig_img
     img_resize_options = (
         "By Pixels",
         "By Percentage"
     )
     img_resize_opt = st.radio(
         "Resize Options",
-        img_resize_options
+        img_resize_options,
+        horizontal=True
     )
     orig_img_size = orig_img.shape
     orig_img_w = orig_img_size[1]
@@ -82,24 +82,70 @@ def resizeImage(orig_img,resize_img=None):
         pass
     img_cols = st.columns(2)
     with img_cols[0]:
-        st.image(orig_img, caption=f"W:{orig_img_w} | H:{orig_img_h}")
+        st.image(orig_img, caption=f"[Original Image] W:{orig_img_w} | H:{orig_img_h}")
     with img_cols[1]:
         resize_img_size = resize_img.shape
-        st.image(resize_img, caption=f"W:{resize_img_size[1]} | H:{resize_img_size[0]}")
+        st.image(resize_img, caption=f"[Resized Image] W:{resize_img_size[1]} | H:{resize_img_size[0]}")
     pass
 def cropImage(orig_img):
     st.markdown("### ✂️ Crop Image")
+    cropped_img = orig_img.copy()
+    marked_img = orig_img.copy()
+    orig_img_w = orig_img.shape[1]
+    orig_img_h = orig_img.shape[0]
+    crop_config_cols = st.columns([1,1,1,1,4])
+    with crop_config_cols[0]:
+        x_offset = st.number_input(
+            "X-Offset",
+            min_value=0,
+            max_value=orig_img_w,
+            value=0
+        )
+    with crop_config_cols[1]:
+        y_offset = st.number_input(
+            "Y-Offset",
+            min_value=0,
+            max_value=orig_img_h,
+            value=0
+        )
+    with crop_config_cols[2]:
+        crop_img_width = st.number_input(
+            "Width",
+            min_value=0,
+            max_value=orig_img_w-x_offset,
+            value=orig_img_w-x_offset
+        )
+    with crop_config_cols[3]:
+        crop_img_height = st.number_input(
+            "Height",
+            min_value=0,
+            max_value=orig_img_h-y_offset,
+            value=orig_img_h-y_offset
+        )
+    cropped_img = orig_img[
+        y_offset:crop_img_height+y_offset,
+        x_offset:crop_img_width+x_offset
+    ]
+    marked_img = cv2.rectangle(marked_img, (x_offset,y_offset), (x_offset+crop_img_width,y_offset+crop_img_height), (0,255,0), 3)
+    img_cols = st.columns(2)
+    with img_cols[0]:
+        orig_img_size = orig_img.shape
+        st.image(marked_img, caption=f"[Original Image] W:{orig_img_size[1]} | H:{orig_img_size[0]}")
+    with img_cols[1]:
+        resize_img_size = cropped_img.shape
+        st.image(cropped_img, caption=f"[Cropped Image] W:{resize_img_size[1]} | H:{resize_img_size[0]}")
     pass
 def App():
     uploaded_img = st.file_uploader("Choose an Image", type=["png", "jpg", "jpeg"])
     if uploaded_img is not None:
         with st.sidebar:
             img_edit_options = (
-                'Resize'
-                ,'Crop'
+                '📏 Resize Image'
+                ,'✂️ Crop Image'
                 )
+            st.success("So what do you wanna do with the image?")
             img_edit_opt = st.radio(
-                "So what do you wanna do with the image?",
+                "Image Editing Options",
                 img_edit_options
             )
         # https://github.com/streamlit/streamlit/issues/888
