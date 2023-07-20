@@ -1,7 +1,4 @@
 streamlit
 pandas
 numpy
-
-# image editor
-opencv-python
-
+scikit-learn
