@@ -17,7 +17,7 @@ def Description():
     A few interesting things about me. I love to read science fiction (<i>my favorite is John C. McCrae's</i> <a href='https://parahumans.wordpress.com/'>|Worm|</a>. 
     Sometimes, I like to relax by drawing digital art or creating art using code. 
     I tend to use <a href='https://www.sketchbook.com/'>|Autodesk SketchBook|</a> when drawing <a href='https://www.instagram.com/steffin.rayen/'>|Digital Art|</a>. 
-    I create Pure CSS images hosted on <a href="">|Codepen|</a> and 3D modelling with Blender hosted on <a href="">|Sketchfab|</a>. 
+    I create Pure CSS images hosted on <a href="https://codepen.io/steffincodes">|Codepen|</a> and 3D modelling with Blender hosted on <a href="https://sketchfab.com/steffincodes">|Sketchfab|</a>. 
     Lastly, I love learning. 
     Every day I push myself to learn something new, whether that be about |machine learning|, |software engineering|, or miscellaneous facts about the universe.
     ''')
